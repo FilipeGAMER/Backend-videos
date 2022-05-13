@@ -5,14 +5,15 @@ import jwt from 'jsonwebtoken'
 // to export the decorators to the outer scope
 
 //node -e "console.log(require('crypto').randomBytes(256).toString('base64'))"
+const JWT = process.env.TOKEN_JWT || "secretTestSecret"
 
 export default fp(async (fastify, opts) => {
   fastify.decorate('createJWT', async function(payload) {
-    return jwt.sign(payload, process.env.TOKEN_JWT, { expiresIn: '15m'});
+    return jwt.sign(payload, JWT, { expiresIn: '15m'});
   })
   
   fastify.decorate('verifyJWT', async function(token) {
-    return jwt.verify(token, process.env.TOKEN_JWT)
+    return jwt.verify(token, JWT)
   })
 
   fastify.decorate("authenticate", async function(request, reply) {
