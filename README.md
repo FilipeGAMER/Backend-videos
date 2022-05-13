@@ -1,4 +1,4 @@
-# API project for a vídeo site
+# API project for a video site
 This project was created with fastify and mongoDb Atlas.
 
 It was a challenge proposed by the e-learning platform [Alura](https://www.alura.com.br/challenges/back-end/)
@@ -7,7 +7,7 @@ ___
 
 ## Tecnologies Explanation
 
-- **fastify**: I learned about It during the Node.js Services Development (LFW212) course and liked the way It works
+- **Fastify**: I learned about It during the Node.js Services Development (LFW212) course and liked the way It works
 
 - **MongoDB Atlas**: Primarily because I wanted to use a free online DB and I has already used It on a previous course
 
@@ -19,7 +19,7 @@ ___
 
 ___
 
-## Requirements
+## Project requirements
 
 - Store the following information about videos on a DB (every field must be required and valid):
   - id
@@ -48,6 +48,19 @@ ___
 - Enable pagination on every `GET` route, limiting the return of 5 itens per page.
 - Only authenticated users can use `GET`, `POST`, `PUT` and `DELETE` routes
 - Create a `GET /videos/free` route that any user, logged or not, can use to view a limited and fixed number of available movies
+
+___
+
+## Before running
+
+It's not necessary, but the project will try to load variables from a .env file on the root directory with the following keys:
+  - NODE_ENV = Development or production
+  - PORT = The desired port to be used
+  - DB_USER = The database username
+  - DB_PASSWD = The database password
+  - DB_PATH = The database path
+  - DB_RETURN_LIMIT = The quantity limit of itens to return
+  - TOKEN_JWT = The JWT token to be used to sign
 
 ___
 
