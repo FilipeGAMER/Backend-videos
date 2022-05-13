@@ -18,9 +18,9 @@ const server = await app({
 })
 
 //import.meta.url === `file://${process.argv[1]}`
-const ADDRESS = process.env.ADDRESS || "0.0.0.0";
-const PORT = process.env.PORT || 3001;
-​
+const ADDRESS = process.env.ADDRESS || "0.0.0.0"
+const PORT = process.env.PORT || 3001
+
 try {
   await server.listen({ port: PORT, address: ADDRESS })
 } catch (err) {
