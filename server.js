@@ -5,12 +5,11 @@ const log = {
 }
 
 if (process.env.NODE_ENV !== 'production') {
-  log = {
-    prettyPrint:{
-      translateTime: 'SYS:yyyy-mm-dd HH:MM:ss.l Z',
-      ignore: 'pid,hostname'
-    }
+  log.prettyPrint = {
+    translateTime: 'SYS:yyyy-mm-dd HH:MM:ss.l Z',
+    ignore: 'pid,hostname'
   }
+  delete log.level
 }
 
 const server = await app({
